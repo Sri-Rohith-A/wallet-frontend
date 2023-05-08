@@ -1,0 +1,50 @@
+@import '../../../styles/scss/index.module.scss';
+.input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 10px;
+  & .input-box {
+    width: 345px;
+    height: 45px;
+    border-radius: 5px;
+    border: none;
+    padding: 15px 15px;
+    box-sizing: border-box;
+    outline: none;
+  }
+  .error {
+    color: $pale-orange;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .input-error {
+    border: 1px solid $red;
+  }
+  .errorBar {
+    background-color: $red;
+    position: absolute;
+    height: 40px;
+    width: 5px;
+    top: 3px;
+    right: 4px;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+  & :disabled {
+    background-color: $disabled-bg;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .input {
+    & .input {
+      width: 100%;
+    }
+  }
+}

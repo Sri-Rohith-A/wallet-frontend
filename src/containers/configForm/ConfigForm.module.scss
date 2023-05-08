@@ -1,0 +1,8 @@
+@import '../../styles/scss/index.module.scss';
+.cash-modal {
+  background-color: $white;
+  @include flex($direction: column, $gap: 20px);
+  > button {
+    align-self: center;
+  }
+}

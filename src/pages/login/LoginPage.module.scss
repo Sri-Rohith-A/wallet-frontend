@@ -1,0 +1,27 @@
+@import '../../styles/scss/index.module.scss';
+.login {
+  background-image: url('../../assets/images/background.jpeg');
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .loginModal {
+    position: absolute;
+    z-index: 1;
+    background-color: $black;
+    height: 100%;
+    width: 435px;
+    right: 80px;
+    @include flex($direction: column, $justifyContent: center, $alignItems: center, $gap: 30);
+    .login-section {
+      @include flex($direction: column, $justifyContent: center, $alignItems: center, $gap: 30px);
+      position: absolute;
+      top: 30%;
+      right: 10%;
+    }
+    .logo {
+      @include flex($justifyContent: center, $alignItems: center);
+    }
+  }
+}

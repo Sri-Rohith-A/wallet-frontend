@@ -1,0 +1,28 @@
+@import '../../../styles/scss/index.module.scss';
+.toastMessage {
+  background-color: $pale-orange;
+  width: 126%;
+  height: 45px;
+  position: relative;
+  padding: 15px 30px;
+  box-sizing: border-box;
+  font-size: 13px;
+  font-weight: 700;
+  right: 1px;
+}
+.loginForm {
+  @include flex($direction: column, $gap: 26px);
+  & .error {
+    color: $red;
+  }
+}
+
+.passwordRecovery {
+  color: $white;
+  align-self: flex-start;
+  font-size: 12px;
+  font-weight: 600;
+  &:hover {
+    cursor: pointer;
+  }
+}
