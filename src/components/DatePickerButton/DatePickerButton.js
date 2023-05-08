@@ -101,4 +101,3 @@ DatePickerButton.propTypes = {
 };
 
 export default DatePickerButton;
-
