@@ -1,0 +1,14 @@
+@import '../../styles/scss/index.module.scss';
+.error {
+  color: $pale-orange;
+  font-size: 13px;
+  font-weight: 600;
+}
+.error-bar {
+  background-color: $red;
+  position: absolute;
+  height: 40px;
+  width: 5px;
+  top: 3px;
+  right: 4px;
+}

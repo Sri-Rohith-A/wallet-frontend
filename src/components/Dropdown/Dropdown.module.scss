@@ -1,0 +1,56 @@
+// Import variables used in the stylesheet
+@import '../../styles/scss/variables.module';
+
+// Define styles for the Dropdown component
+.dropdown {
+  /* Set the width and position of the dropdown */
+  width: 100%;
+  position: relative;
+
+  // Define styles for the dropdown button
+  .dropdown-btn {
+    /* Set the width, height, padding, background, font size, alignment, and cursor of the button */
+    width: 100%;
+    height: 45px;
+    padding: 0 25px;
+    background: $primary-color;
+    display: flex;
+    font-size: 15px;
+    align-items: center;
+    font-weight: 300;
+    cursor: pointer;
+    justify-content: space-between;
+  }
+
+  // Define styles for the dropdown content
+  .dropdown-content {
+    /* Set the position, margin, padding, background, font weight, width, box shadow, alignment, max height, and overflow of the dropdown content */
+    position: absolute;
+    margin-top: 5px;
+    padding: 15px 25px;
+    background: $primary-color;
+    font-weight: 500;
+    width: 100%;
+    box-shadow: 3px 3px 10px 6px $dropdown-box-shadow;
+    align-items: center;
+    max-height: 100px;
+    overflow: scroll;
+    z-index: 9;
+
+    // Define styles for each dropdown item
+    .dropdown-item {
+      /* Set the text alignment, padding, cursor, font weight, font size, and width of each dropdown item */
+      text-align: left;
+      padding: 7px 0px;
+      cursor: pointer;
+      font-weight: 300;
+      font-size: 13px;
+      width: 100%;
+
+      // Define styles for the hover state of each dropdown item
+      &:hover {
+        background: $primary-color;
+      }
+    }
+  }
+}

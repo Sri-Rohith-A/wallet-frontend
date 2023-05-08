@@ -1,0 +1,30 @@
+@import '../../../styles/scss/index.module';
+
+.labeled-radio-group {
+  @include flex($direction: column, $gap: 10px);
+  .radio-group {
+    @include flex($direction: row, $gap: 0);
+
+    & .radio-label {
+      @include flex($direction: row, $alignItems: center, $justifyContent: center);
+      $font-family: $open-sans-extrabold;
+      letter-spacing: 1px;
+      padding: 8px 16px;
+      width: 117px;
+      height: 45px;
+      border: 1px solid $red;
+      font-size: 16px;
+      background-color: $white;
+      color: $black;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+    }
+    & input[type='radio'] {
+      display: none;
+    }
+    & .radio-label.selected {
+      background-color: $red;
+      color: $white;
+    }
+  }
+}

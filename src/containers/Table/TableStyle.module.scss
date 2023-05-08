@@ -1,0 +1,66 @@
+@import '../../styles/scss/index.module.scss';
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  border: none;
+  margin: auto;
+  .table-row-body {
+    border: 1px solid $pale-grey;
+  }
+  .table-data {
+    border: 1px solid $pale-black;
+    padding: 12px;
+    font-size: 13px;
+    font-weight: 300;
+    font-family: $open-sans-light;
+    border: 0;
+    a {
+      text-decoration: none;
+      color: $pale-blue;
+      cursor: pointer;
+    }
+  }
+  .table-header {
+    border: 1px $black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    background-color: $pale-grey;
+    color: $black;
+    font-size: 12.5px;
+    font-weight: 700;
+    font-family: $primary-font;
+    cursor: pointer;
+    &:nth-child(1) {
+      border-top-left-radius: 15px;
+    }
+    &:nth-last-child(1) {
+      border-top-right-radius: 15px;
+    }
+  }
+}
+.pagination {
+  font-size: 12px;
+  font-weight: 500;
+  height: 35px;
+  text-align: left;
+  background-color: $pale-grey;
+  color: $black;
+  border-radius: 0px 0px 15px 15px;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+  cursor: pointer;
+
+  > .direction-button {
+    border: none;
+    font-size: 11px;
+  }
+  .selected {
+    color: $red;
+  }
+}
