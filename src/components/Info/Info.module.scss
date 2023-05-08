@@ -1,9 +1,0 @@
-@import '../../styles/scss/index.module.scss';
-.information {
-  @include flex($direction: row, $gap: 5px, $alignItems: center);
-  color: $dark-grey;
-  .info-message {
-    color: $black;
-    font-size: 8.9px;
-  }
-}
