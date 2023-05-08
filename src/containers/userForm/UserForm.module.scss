@@ -1,0 +1,61 @@
+@import '../../styles/scss/index.module.scss';
+.userform {
+  max-height: 94%;
+  padding: 40px 40px 0 40px;
+
+  .main-section {
+    font-family: $primary-font;
+    height: 94%;
+    form {
+      @include flex($gap: 30px);
+      > button {
+        align-self: center;
+      }
+      .user-form-section {
+        @include flex($direction: row, $gap: 35px);
+        .user-details,
+        .work-details {
+          @include flex($gap: 20px);
+          padding: 40px;
+          border-radius: 7px;
+          width: 50%;
+          background-color: $light-grey;
+          label {
+            font-size: 13px;
+          }
+          .dropdown {
+            @include flex($direction: column, $gap: 10px);
+          }
+        }
+      }
+      .cash-detail-section {
+        @include flex($gap: 10px);
+        background-color: $light-grey;
+        padding: 20px 40px;
+        border-radius: 7px;
+        label {
+          font-size: 13px;
+        }
+        .cash-heading {
+          font-size: 15px;
+          font-family: $primary-font;
+        }
+        .cash-content {
+          font-size: 14px;
+        }
+        .date-container {
+          @include flex($direction: row, $gap: 35px);
+          & > div {
+            width: 350px;
+          }
+          > input:disabled {
+            background-color: $disabled-bg;
+          }
+        }
+        > button {
+          align-self: flex-start;
+        }
+      }
+    }
+  }
+}

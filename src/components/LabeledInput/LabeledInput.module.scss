@@ -1,0 +1,5 @@
+@import '../../styles/scss/index.module.scss';
+.input-label {
+  @include flex($direction: column, $gap: 10px);
+  position: relative;
+}
