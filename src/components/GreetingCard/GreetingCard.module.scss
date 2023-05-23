@@ -12,7 +12,7 @@
     font-size: 18px;
     font-weight: bold;
     padding-bottom: 18px;
-    font-family: $secondary-font;
+    font-family: $primary-font-bold;
   }
   .greeting-message-container {
     display: flex;
@@ -21,6 +21,6 @@
   .greeting-message {
     margin-bottom: 5px;
     font-weight: 700;
-    font-family: $open-sans-light;
+    font-family: $primary-font-light;
   }
 }

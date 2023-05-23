@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types';
 const Title = ({ title }) => {
   return (
     <>
-      <h1 className={style['heading']}>{title}</h1>
+      <h1 className={style['heading']}>{title ? title.toUpperCase() : ''}</h1>
     </>
   );
 };

@@ -1,0 +1,59 @@
+@import '../../styles/scss/index.module';
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $opaque-grey;
+  z-index: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .modal-content {
+    background-color: $white;
+    border-radius: 5px;
+    max-width: 62%;
+    max-height: 90%;
+    position: relative;
+    overflow: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .header-section {
+      position: sticky;
+      background-color: $red;
+      color: $white;
+      width: 100%;
+      top: 0;
+      left: 0;
+      padding: 15px 30px 10px;
+      z-index: 5;
+      .heading {
+        font-size: 20px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+      }
+      .modal-close {
+        position: absolute;
+        right: 40px;
+        top: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        > button {
+          font-size: 30px;
+          width: 10px;
+          padding: 0;
+          color: $white;
+        }
+      }
+    }
+    .modal-main-section {
+      display: flex;
+      width: 400px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 0 30px 30px 30px;
+    }
+  }
+}

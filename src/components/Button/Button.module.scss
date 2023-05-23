@@ -3,8 +3,12 @@
   color: $white;
   padding: 15px;
   font-weight: 600;
+  font-family: $primary-font-regular;
   cursor: pointer;
   @include flex($justifyContent: center, $alignItems: center, $gap: 10px, $direction: row);
+  span {
+    display: flex;
+  }
 }
 .primary {
   background-color: $red;
@@ -18,6 +22,10 @@
 }
 .transparent {
   background-color: transparent;
+}
+.disable {
+  background-color: $disabled-button;
+  border: 0px solid;
 }
 
 // borders
@@ -47,8 +55,14 @@
   width: 218px;
 }
 .button-xxl {
-  width: 345px;
+  width: 355px;
 }
 .button-xxxl {
   width: 440px;
+}
+
+@media screen and (max-width: 1440px) {
+  .button-xxl {
+    width: 100%;
+  }
 }

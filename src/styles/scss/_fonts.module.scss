@@ -1,21 +1,38 @@
-$primary-font: 'OpenSans-Regular';
-$secondary-font: 'OpenSans-Bold';
-$open-sans-light: 'OpenSans-Light';
-$open-sans-extrabold: 'OpenSans-ExtraBold';
-$fonts: (
-  'OpenSans-Regular',
-  'OpenSans-Bold',
-  'OpenSans-Light',
-  'OpenSans-BoldItalic',
-  'OpenSans-ExtraBold',
-  'OpenSans-ExtraBoldItalic',
-  'OpenSans-Italic',
-  'OpenSans-Light'
+// Font Families used in App
+$font-families: ('OpenSans');
+
+// Variants of the Fonts
+$variants: (
+  'Regular',
+  'Bold',
+  'Light',
+  'BoldItalic',
+  'ExtraBold',
+  'ExtraBoldItalic',
+  'Italic',
+  'Light',
+  'Medium',
+  'MediumItalic',
+  'Semibold'
 );
 
-@each $font in $fonts {
-  @font-face {
-    font-family: #{$font};
-    src: url('../../fonts/open-sans/#{$font}.ttf') format('truetype');
+// Fonts used in Application
+$primary-font: 'OpenSans';
+
+// Font Variants used in Application
+$primary-font-regular: 'OpenSans-Regular';
+$primary-font-bold: 'OpenSans-Bold';
+$primary-font-light: 'OpenSans-Light';
+$primary-font-extrabold: 'OpenSans-ExtraBold';
+$primary-font-Semibold: 'OpenSans-Semibold';
+$primary-font-medium: 'OpenSans-Medium';
+
+// Loading the fonts
+@each $family in $font-families {
+  @each $variant in $variants {
+    @font-face {
+      font-family: #{$family + '-' + $variant};
+      src: url('../../fonts/#{$family}/#{$family+'-'+$variant}.ttf') format('truetype');
+    }
   }
 }

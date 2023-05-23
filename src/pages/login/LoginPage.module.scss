@@ -5,11 +5,11 @@
   width: 100vw;
   background-repeat: no-repeat;
   background-size: cover;
-
+  font-family: $primary-font-regular;
   .loginModal {
     position: absolute;
     z-index: 1;
-    background-color: $black;
+    background-color: $opaque-black;
     height: 100%;
     width: 435px;
     right: 80px;
@@ -18,10 +18,9 @@
       @include flex($direction: column, $justifyContent: center, $alignItems: center, $gap: 30px);
       position: absolute;
       top: 30%;
-      right: 10%;
     }
     .logo {
-      @include flex($justifyContent: center, $alignItems: center);
+      @include flex($direction: column, $justifyContent: center, $alignItems: center);
     }
   }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import style from './RadioGroup.module.scss';
 import { Label } from '../label/Label';
 import Info from '../../Info/Info';
+import { BLACK, RADIO } from '../../../constants/app-constants';
 import PropTypes, { number, string } from 'prop-types';
 /**
  * @description function to return a radio group, in which the options are dynamically generated from an object passed to it.
@@ -13,7 +14,7 @@ import PropTypes, { number, string } from 'prop-types';
 const RadioGroup = ({ labelName, options, selectedOption, onChange, register, infoText }) => {
   return (
     <div className={style['labeled-radio-group']}>
-      <Label color={'black'} name={labelName} />
+      <Label color={BLACK} name={labelName} />
       <div className={style['radio-group']}>
         {options.map((option) => (
           <label
@@ -23,7 +24,7 @@ const RadioGroup = ({ labelName, options, selectedOption, onChange, register, in
             }`}
           >
             <input
-              type='radio'
+              type={RADIO}
               {...register}
               value={option.value}
               checked={selectedOption === option.value}

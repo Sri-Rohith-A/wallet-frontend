@@ -1,15 +1,12 @@
 import axios from 'axios';
+import Cookies from 'js-cookie';
+import { TOKEN } from '../constants/app-constants';
 /**
  * axios instance with base url and request header which will be added to all the
  * requests made with this instance
  */
-
-const token = document.cookie
-  ? document.cookie
-      .split('; ')
-      .find((row) => row.startsWith('token='))
-      .split('=')[1]
-  : '';
+const cookieToken = Cookies.get(TOKEN);
+const token = cookieToken ? cookieToken : '';
 // eslint-disable-next-line no-undef
 const BASE_URL = process.env.REACT_APP_API_URL;
 axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;

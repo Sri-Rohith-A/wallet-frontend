@@ -11,7 +11,10 @@ import { ProtectedRouteConstants } from '../../constants/route-constants';
 const Menu = () => {
   return (
     <ul className={styles['menu']}>
-      {ProtectedRouteConstants.map((value, index) => {
+      {Object.values(ProtectedRouteConstants).map((value, index) => {
+        if ([0, 1].includes(index)) {
+          return;
+        }
         return (
           <li key={index} className={styles['list']}>
             <NavLink

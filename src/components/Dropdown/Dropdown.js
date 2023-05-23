@@ -19,7 +19,11 @@ const Dropdown = ({ options, selected, setSelected }) => {
   // Dropdown component markup here
   return (
     <div className={styles['dropdown']}>
-      <div className={styles['dropdown-btn']} onClick={(e) => setIsActive(!isActive)}>
+      <div
+        data-testid='dropdown-btn'
+        className={styles['dropdown-btn']}
+        onClick={(e) => setIsActive(!isActive)}
+      >
         {selected}
         <FaCaretDown />
       </div>
@@ -27,6 +31,7 @@ const Dropdown = ({ options, selected, setSelected }) => {
         <div className={styles['dropdown-content']}>
           {options.map((option, index) => (
             <div
+              data-testid={`dropdown-item-${index}`}
               className={styles['dropdown-item']}
               key={index}
               onClick={(e) => {

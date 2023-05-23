@@ -4,5 +4,6 @@
   @include flex($direction: column, $gap: 20px);
   > button {
     align-self: center;
+    margin-top: 13px;
   }
 }

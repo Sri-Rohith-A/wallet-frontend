@@ -1,24 +1,32 @@
 @import '../../styles/scss/index.module.scss';
 .event-card {
-  background-color: $light-grey;
-  overflow: auto;
+  background-color: $bright-grey;
   width: 16rem;
   margin-bottom: 3%;
   border-radius: 8px;
   height: auto;
+  overflow: hidden;
+  height: 180px;
   padding: 25px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  button {
+    width: 205px;
+  }
 }
 .event-name {
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 1px;
   padding-bottom: 5px;
+  font-weight: 900;
+  text-align: left;
+  height: 25px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 3px;
 }
 .event-date {
   font-size: 12px;
+  text-align: left;
   padding-bottom: 15px;
   font-weight: 500;
 }
@@ -27,4 +35,17 @@
   cursor: pointer;
   margin: auto;
   padding-top: 10px;
+}
+@media screen and (max-width: 768px) {
+  /* Styles for small screens */
+  .event-card {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Styles for extra-small screens */
+  .event-card {
+    width: 200px;
+  }
 }

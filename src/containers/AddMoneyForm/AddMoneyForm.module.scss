@@ -1,0 +1,46 @@
+@import '../../styles/scss/index.module.scss';
+.parent-form {
+  padding: 3% 19%;
+  margin-left: auto;
+  margin-right: auto;
+  .form-section {
+    min-height: 28rem;
+    max-height: 60%;
+    font-size: 12px;
+    @include flex($direction: row, $gap: 4%);
+    .transaction-section,
+    .recipient-section {
+      @include flex($direction: column, $gap: 10px);
+      padding: 4% 4%;
+      border-radius: 7px;
+      width: 100%;
+      background-color: $light-grey;
+      h5 {
+        font-size: 12.5px;
+        font-family: $primary-font-bold;
+        font-weight: 200;
+      }
+      > .dropdown,
+      > .typehead,
+      > .input,
+      input {
+        font-size: 12.5px;
+        color: rgb(59, 55, 55);
+      }
+      .label,
+      label {
+        font-size: 12.5px;
+        margin-top: 10px;
+        font-family: $primary-font-medium;
+      }
+    }
+  }
+  button {
+    margin-top: 3.3%;
+    margin-left: auto;
+    margin-right: auto;
+    &:disabled {
+      background-color: $disabled-button;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 export const TableRows = {
-  ADD_USERS: [
+  USERS: [
     { property: 'employeeId', label: 'Emp Id', name: 'Emp Id' },
     { property: 'employeeName', label: 'Employee Name', name: 'Employee Name' },
     { property: 'businessUnitName', label: 'Buisness Unit', name: 'Buisness Unit' },
@@ -13,10 +13,26 @@ export const TableRows = {
     { href: 'manage', label: 'Manage', name: null },
   ],
   PAST_EVENTS: [
-    { property: '_id', label: 'Creation Date' },
-    { property: 'name', label: 'Event Name' },
-    { property: 'name', label: 'Event Start Date' },
-    { property: 'name', label: 'Event End Date' },
-    { href: 'transactions', label: 'Transactions' },
+    { property: 'creationDate', label: 'Creation Date', name: 'Creation Date' },
+    { property: 'eventName', label: 'Event Name', name: 'Event Name' },
+    { property: 'startDate', label: 'Event Start Date', name: 'Event Start Date' },
+    { property: 'endDate', label: 'Event End Date', name: 'Event End Date' },
+  ],
+  USER_TRANSACTIONS: [
+    { property: 'date', label: 'Date', name: 'Date' },
+    { property: 'transactionNo', label: 'Transaction No', name: 'Transaction No' },
+    { property: 'cashType', label: 'Cash Type', name: 'Cash Type' },
+    { property: 'description', label: 'Description', name: 'Description' },
+    { style: 'status', label: 'Status', name: 'Status' },
+    { style: 'amount', label: 'Amount', name: 'Amount' },
+  ],
+  REPORTS: [
+    { property: 'date', label: 'Date', name: 'Date' },
+    { property: 'transactionNo', label: 'Transaction No', name: 'Transaction No' },
+    { property: 'empId', label: 'Emp Id', name: 'Emp Id' },
+    { property: 'employeeName', label: 'Employee Name', name: 'Employee Name' },
+    { property: 'location', label: 'Location', name: 'Location' },
+    { property: 'transactionStatus', label: 'Status', name: 'Status' },
+    { property: 'amount', label: 'Amount', name: 'Amount' },
   ],
 };

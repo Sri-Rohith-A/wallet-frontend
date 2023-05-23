@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import style from './OverlayModal.module.scss';
 import { PropTypes } from 'prop-types';
+import Button from 'components/Button/Button';
+import { IoCloseSharp } from 'react-icons/io5';
+import Title from 'components/Title/Title';
+import { AppConstants } from 'constants/app-constants';
 /**
  * @description function to return a generic Overlay modal, which will display any children component passed to it.
  * @version 1.0.0
@@ -19,10 +23,16 @@ export const OverlayModal = ({ onClose, children, title }) => {
     <div className={style['modal-overlay']}>
       <div className={style['modal-content']}>
         <div className={style['header-section']}>
-          <h2 className={style['heading']}>{title}</h2>
-          <button className={style['modal-close']} onClick={handleClose}>
-            X
-          </button>
+          <Title title={title} />
+          <span className={style['modal-close']}>
+            <Button
+              icon={<IoCloseSharp />}
+              border={AppConstants.BUTTON.BORDER.NONE}
+              color={AppConstants.BUTTON.COLOR.TRANSPARENT}
+              size={AppConstants.BUTTON.SIZE.XS}
+              click={handleClose}
+            />
+          </span>
         </div>
         <div className={style['modal-main-section']}>{children}</div>
       </div>

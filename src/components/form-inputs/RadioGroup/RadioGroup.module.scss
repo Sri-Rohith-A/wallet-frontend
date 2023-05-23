@@ -4,20 +4,22 @@
   @include flex($direction: column, $gap: 10px);
   .radio-group {
     @include flex($direction: row, $gap: 0);
+    font-family: $primary-font-Semibold;
 
     & .radio-label {
       @include flex($direction: row, $alignItems: center, $justifyContent: center);
-      $font-family: $open-sans-extrabold;
-      letter-spacing: 1px;
       padding: 8px 16px;
       width: 117px;
       height: 45px;
-      border: 1px solid $red;
       font-size: 16px;
+      border: 1px solid $red;
       background-color: $white;
-      color: $black;
+      color: $red;
       transition: background-color 0.2s ease, color 0.2s ease;
       cursor: pointer;
+      &:not(.radio-label:first-child) {
+        border-left: 0;
+      }
     }
     & input[type='radio'] {
       display: none;

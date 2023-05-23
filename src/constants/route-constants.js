@@ -1,15 +1,19 @@
-export const ProtectedRouteConstants = [
-  { routeName: 'DASHBOARD', path: 'dashboard' },
+export const ProtectedRouteConstants = {
+  HOME: { routeName: 'HOME', path: '/' },
 
-  { routeName: 'REPORTS', path: 'reports' },
+  LOGIN: { routeName: 'LOGIN', path: 'login' },
 
-  { routeName: 'STATS', path: 'stats' },
+  DASHBOARD: { routeName: 'DASHBOARD', path: 'dashboard' },
 
-  { routeName: 'USERS', path: 'users' },
+  REPORTS: { routeName: 'REPORTS', path: 'reports' },
 
-  { routeName: 'ADD MONEY', path: 'cash' },
+  STATS: { routeName: 'STATS', path: 'stats' },
 
-  { routeName: 'EVENTS', path: 'events' },
+  USERS: { routeName: 'USERS', path: 'users' },
 
-  { routeName: 'CONFIGS', path: 'configs' },
-];
+  ADD_MONEY: { routeName: 'ADD MONEY', path: 'cash' },
+
+  EVENTS: { routeName: 'EVENTS', path: 'events' },
+
+  CONFIGS: { routeName: 'CONFIGS', path: 'configs' },
+};

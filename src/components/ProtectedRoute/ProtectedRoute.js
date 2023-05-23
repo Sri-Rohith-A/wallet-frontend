@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
-import { RouteConstants } from '../../constants/routes-constants';
+import { CDW_LOGO } from '../../constants/app-constants';
+import { ProtectedRouteConstants } from '../../constants/route-constants';
 import SideBar from '../../containers/sideBar/SideBar';
 import styles from './ProtectedRoutes.module.scss';
 import { useGlobalContext } from '../../hooks/useCookieContext/useCookieContext';
@@ -13,7 +14,7 @@ import logo from '../../assets/logo/cdw-white-logo.svg';
  * @author [Battepati Lokesh Reddy]
  */
 const ProtectedRoute = () => {
-  const { LOGIN } = RouteConstants;
+  const { LOGIN } = ProtectedRouteConstants;
   const { Token } = useGlobalContext();
   return Token ? (
     <>
@@ -23,7 +24,7 @@ const ProtectedRoute = () => {
           fallback={
             <div className={styles['logo-wrapper']}>
               <div className={styles['logo-container']}>
-                <Logo src={logo} alt={'cdw logo'} />
+                <Logo src={logo} alt={CDW_LOGO} />
               </div>
             </div>
           }
@@ -33,7 +34,7 @@ const ProtectedRoute = () => {
       </div>
     </>
   ) : (
-    <Navigate to={LOGIN} replace />
+    <Navigate to={LOGIN.path} replace />
   );
 };
 

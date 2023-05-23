@@ -16,7 +16,7 @@ const OverViewTile = ({ timeInterval, ammountSpent, handleActiveCard, cardIndex,
       onClick={handleActiveCard}
     >
       <p className={style['card-name']}>{`${timeInterval}`}</p>
-      {ammountSpent && (
+      {ammountSpent >= 0 && (
         <p className={style['card-data']}>
           {CurrencyUtil.indianRupeeSymbol()} {CurrencyUtil.currencyFormatters(ammountSpent)}
         </p>
@@ -26,7 +26,7 @@ const OverViewTile = ({ timeInterval, ammountSpent, handleActiveCard, cardIndex,
 };
 OverViewTile.propTypes = {
   timeInterval: PropTypes.string.isRequired,
-  ammountSpent: PropTypes.number.isRequired,
+  ammountSpent: PropTypes.number,
   handleActiveCard: PropTypes.func.isRequired,
   cardIndex: PropTypes.number.isRequired,
   activeCard: PropTypes.number.isRequired,

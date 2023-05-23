@@ -1,13 +1,15 @@
 import { URL_CONSTANTS } from 'constants/url-constants';
-import { SORT, PAGE, LIMIT, FIELD } from 'constants/app-constants';
+import { SORT, PAGE, LIMIT, FIELD, TOKEN } from 'constants/app-constants';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 /**
  * @description configurations for axios
  * @author [Hariboobaalan]
  */
+const token = Cookies.get(TOKEN);
 const config = {
   headers: {
-    Authorization: `Bearer ${document.cookie.split('; ')[0].split('=')[1]}`,
+    Authorization: `Bearer ${token}`,
   },
 };
 const { USER, MANAGE_USERS } = URL_CONSTANTS;
@@ -25,15 +27,16 @@ const UserServices = {
     return await axios.post(`${BASE_URL}${USERS}`, userData, config).catch((error) => error);
   },
   getUserService: async (userId) => {
+    if (isNaN(userId)) return;
     return await axios
       .get(`${BASE_URL}${USERS}/${userId}`, config)
       .then((data) => data)
       .catch((error) => error);
   },
-  getUsersService: async (currentPage = 1, sort = 'asc', colum = 'employeeId', current = 15) => {
+  getUsersService: async (currentPage, sort, column, current) => {
     return axios
       .get(
-        `${BASE_URL}${USER.USERS}?${SORT}=${sort}&${FIELD}=${colum}&${PAGE}=${currentPage}&${LIMIT}=${current}`,
+        `${BASE_URL}${USER.USERS}?${SORT}=${sort}&${FIELD}=${column}&${PAGE}=${currentPage}&${LIMIT}=${current}`,
         config,
       )
       .then((data) => data)
@@ -57,8 +60,17 @@ const UserServices = {
       .catch((error) => error);
   },
   getBusinessAndLocations: async () => {
-    return await axios
+    return axios
       .get(`${BASE_URL}${USERS}/${BUSINESS_LOCATIONS}`, config)
+      .then((data) => data)
+      .catch((error) => error);
+  },
+  getUserTransactions: async (currentPage, sort, column, current, userId) => {
+    return await axios
+      .get(
+        `${BASE_URL}${USERS}/${userId}${USER.TRANSACTIONS}?${SORT}=${sort}&${FIELD}=${column}&${PAGE}=${currentPage}&${LIMIT}=${current}`,
+        config,
+      )
       .then((data) => data)
       .catch((error) => error);
   },

@@ -1,5 +1,7 @@
+@import './variables.module';
+// Mixin to include flex
 @mixin flex(
-  $direction: column,
+  $direction: row,
   $wrap: nowrap,
   $alignContent: none,
   $justifyContent: none,
@@ -15,24 +17,61 @@
   gap: $gap;
 }
 
+// Mixin to include centered flex
 @mixin flexCentre {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+// Mixin to include column directioned flex
 @mixin flexColumn {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
+
+// Mixin to include row directioned flex
 @mixin flexRow {
   display: flex;
   flex-direction: row;
 }
+
+// Mixin to include margins
 @mixin margin($top: 0, $right: 0, $bottom: 0, $left: 0) {
   margin: $top $right $bottom $left;
 }
+
+// Mixin to include paddings
 @mixin padding($top: 0, $right: 0, $bottom: 0, $left: 0) {
   padding: $top $right $bottom $left;
+}
+
+// Mixin for mediaqueries
+@mixin devices($breakpoint) {
+  @if $breakpoint == laptop {
+    @media screen and (min-width: $laptop-screen-min) and (max-width: $laptop-screen-max) {
+      @content;
+    }
+  }
+  @if $breakpoint == large-laptop {
+    @media screen and (min-width: $large-laptop-screen-min) and (max-width: $large-laptop-screen-max) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media screen and (min-width: $desktop-screen-min) and (max-width: $desktop-screen-max) {
+      @content;
+    }
+  }
+  @if $breakpoint == large-desktop {
+    @media screen and (min-width: $large-desktop-screen-min) and (max-width: $large-desktop-screen-max) {
+      @content;
+    }
+  }
+  @if $breakpoint == other-large-screen {
+    @media screen and (min-width: $other-large-screens-min) {
+      @content;
+    }
+  }
 }

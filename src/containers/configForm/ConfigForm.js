@@ -6,10 +6,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import style from './ConfigForm.module.scss';
 import CashDetails from 'containers/cashDetails/CashDetails';
 import Button from 'components/Button/Button';
-import { AppConstants } from 'constants/app-constants';
-import { configGetService, configPatchService } from 'services/configService';
-import { StringHelper } from 'utils/stringHelper';
+import { AppConstants, SUCCESS_CODE } from 'constants/app-constants';
 import { useConfigsData, useConfigsPatch } from 'hooks/useConfigsData/useConfigsData';
+import ConfirmationBox from 'components/ConfirmationBox/ConfirmationBox';
 
 /**
  * @description this function will render the config form container
@@ -18,39 +17,57 @@ import { useConfigsData, useConfigsPatch } from 'hooks/useConfigsData/useConfigs
  */
 
 const ConfigForm = () => {
+  const [FormData, setFormData] = useState(null);
   const {
     register,
     handleSubmit,
     formState: { errors },
+    onChange,
   } = useForm();
 
   //toast message handler
   const handleConfigsSave = (data) => {
-    if (data.status == 200) {
-      toast.success(data.data.data, { autoClose: false });
+    if (data.status == SUCCESS_CODE) {
+      toast.success(data.data.data);
     } else {
-      toast.error(data.data.data, { autoClose: false });
+      toast.error(data.data.data);
     }
   };
 
-  // getting configs data from useConfigsData hook
-  const { data: configsData, isLoading } = useConfigsData();
+  const [buttonToggle, setToggle] = useState(true);
 
+  // getting configs data from useConfigsData hook
+  const { data: configsData, isLoading, refetch } = useConfigsData();
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    refetch();
+  }, [configsData]);
   //upadting configs form with useConfigsPatch hook
   const { mutate: updateConfigs } = useConfigsPatch(handleConfigsSave);
 
   if (isLoading) {
     return <h1>Loading..</h1>;
   }
+  const handleClose = () => {
+    setShow(false);
+  };
+  const handleChange = () => {
+    setToggle(false);
+  };
 
   //setting the data
   const data = configsData?.data?.data;
 
-  const onSubmit = (data) => {
+  const onSubmit = (data, event) => {
+    setFormData(data);
+    setShow(true);
+  };
+  const handleConformation = () => {
     const result = [];
-    for (const key in data) {
+    for (const key in FormData) {
       const [location, cashType, defaultCarryOverDays] = key.split('-');
-      const value = data[key];
+      const value = FormData[key];
       const entry = result.find(
         (item) => item.locationId === location && item.cashTypeId === cashType,
       );
@@ -64,7 +81,10 @@ const ConfigForm = () => {
         });
       }
     }
+    setToggle(true);
     updateConfigs(result);
+    setFormData(null);
+    setShow(false);
   };
 
   return (
@@ -75,6 +95,7 @@ const ConfigForm = () => {
           filter={AppConstants.CONFIG.CDW_CASH}
           register={register}
           errors={errors}
+          change={handleChange}
         />
 
         <CashDetails
@@ -82,15 +103,27 @@ const ConfigForm = () => {
           filter={AppConstants.CONFIG.MATERNITY_CASH}
           register={register}
           errors={errors}
+          change={handleChange}
         />
         <Button
-          color={AppConstants.BUTTON.BUTTON_COLOR_PRIMARY}
-          size={AppConstants.BUTTON.BUTTON_SIZE_XXL}
-          border={AppConstants.BUTTON.BUTTON_SHAPE_SOLID}
+          color={
+            buttonToggle ? AppConstants.BUTTON.COLOR.DISABLE : AppConstants.BUTTON.COLOR.PRIMARY
+          }
+          size={AppConstants.BUTTON.SIZE.XXL}
+          border={AppConstants.BUTTON.SHAPE.SOLID}
           label={AppConstants.CONFIG.BUTTON_LABEL}
+          disable={buttonToggle}
         />
       </form>
       <ToastContainer />
+      {show && (
+        <ConfirmationBox
+          title={AppConstants.CONFIG.CONFIRMATION_BOX.TITLE}
+          desc={AppConstants.CONFIG.CONFIRMATION_BOX.DESC}
+          close={handleClose}
+          click={handleConformation}
+        />
+      )}
     </>
   );
 };

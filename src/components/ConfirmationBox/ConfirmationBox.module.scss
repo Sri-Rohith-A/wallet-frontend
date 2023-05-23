@@ -1,0 +1,12 @@
+.confirmation-box {
+  display: flex;
+  .desc {
+    padding: 25px 15px 28px 0;
+    height: 80px;
+  }
+  button {
+    font-size: 20px;
+    padding: 5px;
+    font-weight: 500;
+  }
+}
