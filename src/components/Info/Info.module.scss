@@ -1,6 +1,6 @@
 @import '../../styles/scss/index.module.scss';
 .information {
-  @include flex($direction: row, $gap: 5px, $alignItems: center);
+  @include flex($direction: row, $gap: 8px, $alignItems: center, $wrap: wrap);
   color: $dark-grey;
   .info-message {
     color: $black;

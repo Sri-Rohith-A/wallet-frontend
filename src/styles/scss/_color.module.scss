@@ -1,18 +1,47 @@
-$primary-color: #5b8edc;
+// Primary and Secondary color.
+$primary-color: #ffffff;
 $secondary-color: #c1e792;
-$red: #cc0100;
-$black: #000;
+
+// White color group
 $white: #fff;
-$pale-orange: #ffa503;
+
+// Green color group
+$pale-green: #cff0b3;
+$faded-green: #00aa01;
+$dark-green: #8e9a82;
+
+// Red color group
+$pale-red: #d93f3f;
+$red: #cc0100;
+
+// Black color group
+$black: #000;
 $light-black: #1a1a1a;
+$pale-black: #ddd;
+$opaque-black: #150607;
+
+// Grey color group
 $light-grey: #f8f8f8;
-$pale-yellow: #f6d78b;
+$pale-grey: #eaebed;
+$faded-grey: #444444;
 $dark-grey: #999999;
 $opaque-grey: #00000080;
+$bright-grey: #efefef;
+$light-medium-grey: #d1d3d1;
+$extra-dark-grey: #dedede;
+$shadow-grey: #0f0f0f1a;
+
+// Yellow color group
+$pale-yellow: #f6d78b;
+
+// Orange color group
+$pale-orange: #ffa503;
+
+// Purple color group
 $liberty: #595b9a;
-$pale-grey: #eaebed;
+
+// Blue color group
 $pale-blue: #5684cd;
-$pale-black: #ddd;
-$faded-grey: #444444;
-$pale-green: #cff0b3;
-$disabled-bg: #eae4e4;
+
+$disabled-input: #eae4e4;
+$disabled-button: #e68181;

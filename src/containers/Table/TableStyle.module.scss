@@ -1,46 +1,67 @@
 @import '../../styles/scss/index.module.scss';
 
 .table {
-  border-collapse: collapse;
   width: 100%;
-  text-align: center;
-  border: none;
-  margin: auto;
+  border-collapse: collapse;
   .table-row-body {
     border: 1px solid $pale-grey;
   }
   .table-data {
     border: 1px solid $pale-black;
-    padding: 12px;
-    font-size: 13px;
-    font-weight: 300;
-    font-family: $open-sans-light;
+    padding: 12px 0px;
+    font-weight: 400;
+    font-family: $primary-font-light;
     border: 0;
+    &:nth-child(1) {
+      padding-left: 30px;
+    }
+    &:nth-last-child(1) {
+      padding-right: 30px;
+    }
     a {
       text-decoration: none;
       color: $pale-blue;
       cursor: pointer;
     }
+    .green-color-txt {
+      color: $faded-green;
+    }
+    .red-color-txt {
+      color: $pale-red;
+    }
   }
   .table-header {
     border: 1px $black;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    text-align: center;
+    padding: 20px 0px;
     background-color: $pale-grey;
     color: $black;
-    font-size: 12.5px;
     font-weight: 700;
-    font-family: $primary-font;
-    cursor: pointer;
+    span {
+      cursor: pointer;
+      svg {
+        font-size: 16px;
+        vertical-align: middle;
+      }
+    }
+    .sort-icon {
+      padding-left: 5px;
+    }
     &:nth-child(1) {
       border-top-left-radius: 15px;
+      padding-left: 30px;
     }
     &:nth-last-child(1) {
       border-top-right-radius: 15px;
+      padding-right: 30px;
     }
   }
+  .no-data-txt {
+    font-size: 16px;
+    text-align: center;
+    padding: 20px 0;
+  }
 }
+
 .pagination {
   font-size: 12px;
   font-weight: 500;
@@ -55,12 +76,29 @@
   width: 100%;
   margin: auto;
   cursor: pointer;
-
   > .direction-button {
     border: none;
     font-size: 11px;
+    cursor: pointer;
   }
   .selected {
     color: $red;
+  }
+  .txt-gap {
+    padding: 0 5px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+}
+
+@media only screen and (min-width: 2080px) {
+  .table {
+    .table-header {
+      span {
+        svg {
+          font-size: 20px;
+        }
+      }
+    }
   }
 }

@@ -1,0 +1,68 @@
+@import '../../styles/scss/index.module.scss';
+
+.filter {
+  height: 48px;
+  width: 355px;
+  background-color: $white;
+  padding: 0 15px;
+  margin-bottom: 8px;
+
+  @include flex($direction: row, $alignItems: center, $gap: 15px);
+  > label {
+    color: $black;
+    font-size: 12px;
+    width: 100%;
+    height: 100%;
+    @include flex($direction: row, $alignItems: center);
+    cursor: pointer;
+    text-transform: capitalize;
+  }
+  //Radio button
+  input[type='radio']:after {
+    width: 18px;
+    height: 18px;
+    border-radius: 15px;
+    top: -3px;
+    left: -3px;
+    position: relative;
+    background-color: $white;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 1px solid $light-medium-grey;
+  }
+  input[type='radio']:checked:after {
+    width: 18px;
+    height: 18px;
+    border-radius: 15px;
+    top: -3px;
+    left: -3px;
+    position: relative;
+    background-color: $red;
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+    background: $red url('../../assets/icon/tick.svg') no-repeat center;
+    background-size: 12px;
+  }
+  //Check button
+  input[type='checkbox'] {
+    width: 18px;
+    height: 18px;
+    appearance: none;
+    background-color: $white;
+    border: 1px solid $light-medium-grey;
+    border-radius: 0.15em;
+    appearance: none;
+  }
+  input[type='checkbox']:checked {
+    content: '';
+    accent-color: $red;
+    height: 18px;
+    width: 18px;
+    border-radius: 3px;
+    border: 1px solid $light-grey;
+    background: $red url('../../assets/icon/tick.svg') no-repeat center;
+    background-size: 12px;
+  }
+}

@@ -16,7 +16,6 @@ const Error = ({ name, errors }) => {
 };
 
 Error.propTypes = {
-  type: PropTypes.string,
   name: PropTypes.string,
   errors: PropTypes.object,
 };

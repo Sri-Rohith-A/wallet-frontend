@@ -8,7 +8,7 @@
   }
   h3 {
     font-size: 11px;
-    font-weight: 600;
+    font-family: $primary-font-bold;
     margin-bottom: 5px;
     color: $faded-grey;
   }
@@ -17,7 +17,7 @@
     li {
       font-size: 14px;
       font-weight: 900;
-      font-family: $open-sans-light;
+      font-family: $primary-font-light;
       margin-bottom: 10px;
     }
   }

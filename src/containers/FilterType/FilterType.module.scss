@@ -1,0 +1,9 @@
+@import '../../styles/scss/index.module.scss';
+.filter-type {
+  margin-bottom: 25px;
+  h5 {
+    font-family: $primary-font-Semibold;
+    font-size: 13px;
+    margin: 15px 0;
+  }
+}

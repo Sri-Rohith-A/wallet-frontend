@@ -1,7 +1,34 @@
+@import '../../styles/scss/index.module.scss';
 .event-container {
   width: 100%;
-  height: auto;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  h1 {
+    width: 100%;
+    @include flex($alignContent: 'center', $justifyContent: 'center', $direction: 'row');
+    display: flex;
+    color: $faded-grey;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  & {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+@media screen and (max-width: 480px) {
+  /* Styles for extra-small screens */
+  .event-card {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  /* Styles for small screens */
+  .event-container {
+    width: 300px;
+  }
 }

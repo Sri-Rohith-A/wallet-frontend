@@ -1,5 +1,5 @@
 /* Import the variables module */
-@import '../../styles/scss/variables.module';
+@import '../../styles/scss/color.module';
 
 // Set position and font family for the search container
 .search-container {
@@ -10,7 +10,7 @@
   .search-inner {
     width: 100%;
     height: 45px;
-    padding: 0 25px;
+    padding: 0 15px;
     background: $primary-color;
     display: flex;
 
@@ -31,14 +31,15 @@
   .dropdown {
     position: absolute;
     margin-top: 5px;
-    padding: 15px 25px;
+    padding: 10px 15px;
     background: #fff;
     font-weight: 500;
     width: 100%;
-    box-shadow: 3px 3px 10px 6px $dropdown-box-shadow;
+    box-shadow: 3px 3px 10px 6px $shadow-grey;
     align-items: center;
-    max-height: 100px;
-    overflow: scroll;
+    max-height: 90px;
+    overflow: auto;
+    white-space: nowrap;
 
     // Remove border and shadow when dropdown is empty
     &:empty {
@@ -50,10 +51,10 @@
     // Style each individual dropdown row with specific padding, cursor, font weight, and font size
     .dropdown-row {
       text-align: left;
-      padding: 7px 0px;
+      padding: 4px 0px;
       cursor: pointer;
       font-weight: 300;
-      font-size: 13px;
+      font-size: 11px;
       width: 100%;
 
       // Change background color on hover

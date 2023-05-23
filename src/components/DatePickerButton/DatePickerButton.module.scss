@@ -1,23 +1,21 @@
 @import '../../styles/scss/index.module.scss';
 
 .input-container {
+  width: 100%;
   color: $white;
   position: relative;
-  min-width: 100%;
-  max-width: 392px;
   height: 49px;
-  display: flex;
 }
 .date-time-picker {
   @include flex($direction: column, $gap: 10px);
-  margin-top: 20px;
+  margin-top: 0px;
 }
 .calendar-icon {
   position: absolute;
   top: 48%;
   right: 10px;
   transform: translateY(-50%);
-  font-size: 25px;
+  font-size: 23px;
   cursor: pointer;
   padding-right: 7px;
   color: $black;
@@ -40,5 +38,5 @@
 }
 
 .date-input-disabled {
-  background-color: $pale-grey;
+  background-color: $disabled-input;
 }

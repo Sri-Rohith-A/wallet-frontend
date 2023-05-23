@@ -1,4 +1,4 @@
-@import '../../styles/scss/index.module';
+@import 'styles/scss/index.module';
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -12,7 +12,7 @@
   align-items: center;
   .modal-content {
     background-color: $white;
-    border-radius: 5px;
+    border-radius: 7px;
     max-width: 62%;
     max-height: 90%;
     position: relative;
@@ -29,22 +29,21 @@
       padding: 45px 45px 10px;
       z-index: 5;
       .heading {
-        font-family: $primary-font;
         font-size: 32px;
         font-weight: 300;
         letter-spacing: 0.5px;
       }
       .modal-close {
         position: absolute;
-        right: 40px;
-        top: 35px;
+        right: 30px;
+        top: 25px;
         font-size: 20px;
         cursor: pointer;
         > button {
           font-size: 30px;
           width: 10px;
           padding: 0;
-          color: black;
+          color: $black;
         }
       }
     }

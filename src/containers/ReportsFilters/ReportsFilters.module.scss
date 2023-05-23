@@ -1,0 +1,23 @@
+@import '../../styles/scss/index.module.scss';
+.filters {
+  margin: 18px 0 60px 0;
+  ul {
+    list-style: none;
+    color: $red;
+    background-color: $light-grey;
+    font-family: $primary-font-bold;
+    @include flex($direction: row);
+    li {
+      border: 1px solid $red;
+      font-size: 13px;
+      padding: 13px 26px;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+}
+.active-tab {
+  background-color: $red;
+  color: $white;
+  font-family: $primary-font-Semibold;
+}

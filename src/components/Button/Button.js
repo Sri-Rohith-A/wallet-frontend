@@ -8,13 +8,13 @@ import { PropTypes } from 'prop-types';
  * @version 1.0.0
  * @author [Abdul Adhil, Battepati Lokesh Reddy]
  */
-const Button = ({ color, size, label, border, icon, click }) => {
+const Button = ({ color, size, label, border, icon, click, disable }) => {
   const customStyling = `${styles['button']} ${color ? styles[color] : ''} ${
     size ? styles['button-' + size] : ''
   } ${border ? styles['border-' + border] : ''}`;
 
   return (
-    <button className={`${customStyling}`} onClick={click}>
+    <button className={`${customStyling}`} onClick={click} disabled={disable}>
       {label}
       {icon ? <span>{icon}</span> : ''}
     </button>
@@ -27,5 +27,9 @@ Button.propTypes = {
   border: PropTypes.string,
   icon: PropTypes.object,
   click: PropTypes.func,
+  disable: PropTypes.bool,
+};
+Button.defaultProps = {
+  disable: false,
 };
 export default Button;

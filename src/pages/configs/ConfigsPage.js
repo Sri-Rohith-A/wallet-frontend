@@ -7,6 +7,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { IoIosArrowForward } from 'react-icons/io';
 import Title from 'components/Title/Title';
 import ContainerLayout from 'layouts/Containers/ContainerLayout';
+import { set } from 'react-hook-form';
 
 /**
  * @description this function is to render the config page

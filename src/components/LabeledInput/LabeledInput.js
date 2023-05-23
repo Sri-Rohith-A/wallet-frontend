@@ -10,10 +10,21 @@ import styles from './LabeledInput.module.scss';
  * @author [Vishnuraj]
  */
 
-const LabeledInput = ({ type, name, register, errors, disabled, labelColor, value }) => {
+const LabeledInput = ({
+  type,
+  name,
+  register,
+  errors,
+  disabled,
+  labelColor,
+  labelText,
+  value,
+  defaultValue,
+  change,
+}) => {
   return (
     <div className={styles['input-label']}>
-      <Label name={name} color={labelColor} />
+      <Label name={name} color={labelColor} labelText={labelText} />
       <Input
         type={type}
         name={name}
@@ -21,6 +32,8 @@ const LabeledInput = ({ type, name, register, errors, disabled, labelColor, valu
         disabled={disabled}
         register={register}
         errors={errors}
+        defaultValue={defaultValue}
+        change={change}
       />
     </div>
   );
@@ -32,8 +45,11 @@ LabeledInput.propTypes = {
   register: PropTypes.object,
   errors: PropTypes.object,
   labelColor: PropTypes.string,
+  labelText: PropTypes.string,
   disabled: PropTypes.bool,
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  defaultValue: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  change: PropTypes.func,
 };
 
 export default LabeledInput;

@@ -1,0 +1,28 @@
+@import '../../styles/scss/fonts.module';
+@import '../../styles/scss/color.module';
+.sales-overview {
+  display: flex;
+  width: 100%;
+  .dashboard-overview-container {
+    width: 70%;
+    padding: 1% 1.6%;
+    h1 {
+      margin-bottom: 15px;
+    }
+    h3 {
+      margin-top: 5%;
+      margin-bottom: 2%;
+    }
+  }
+  .dashboard-stats-container {
+    width: 30%;
+    padding: 1% 1.8%;
+    background-color: $light-grey;
+  }
+  .sales-heading {
+    padding-top: 5%;
+    padding-bottom: 2.5%;
+    font-size: 20px;
+    font-family: $primary-font-bold;
+  }
+}

@@ -2,7 +2,7 @@ export const TableColumn = {
   ADD_USERS: [
     { name: 'Emp Id' },
     { name: 'Employee Name' },
-    { name: 'Buisness Unit' },
+    { name: 'Business Unit' },
     { name: 'Location' },
     { name: 'CDW Cash' },
     { name: 'CO Cash' },

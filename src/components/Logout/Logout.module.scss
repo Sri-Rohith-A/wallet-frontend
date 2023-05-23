@@ -5,7 +5,7 @@
   width: 100%;
   padding: 15px;
   font-size: 12px;
-  font-family: $secondary-font;
+  font-family: $primary-font-bold;
   @include flex(
     $direction: column,
     $wrap: wrap,
@@ -16,6 +16,7 @@
   button {
     padding: 0px;
     font-size: 11px;
-    font-family: $open-sans-light;
+    font-family: $primary-font-light;
+    cursor: pointer;
   }
 }

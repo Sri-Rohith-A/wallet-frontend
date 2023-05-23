@@ -1,6 +1,9 @@
 @import '../../styles/scss/index.module.scss';
 .root-layout {
   display: flex;
+  height: 100vh;
+  overflow: hidden;
+  font-family: $primary-font-regular;
 }
 .logo-wrapper {
   @include flexCentre;

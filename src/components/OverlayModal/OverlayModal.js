@@ -3,6 +3,8 @@ import style from './OverlayModal.module.scss';
 import { PropTypes } from 'prop-types';
 import Button from 'components/Button/Button';
 import { IoCloseSharp } from 'react-icons/io5';
+import { AppConstants } from '../../constants/app-constants';
+import Title from 'components/Title/Title';
 /**
  * @description function to return a generic Overlay modal, which will display any children component passed to it.
  * @version 1.0.0
@@ -10,7 +12,7 @@ import { IoCloseSharp } from 'react-icons/io5';
  * @param { onClose, children, title }
  * @returns Overlay Modal
  */
-export const OverlayModal = ({ onClose, children, title }) => {
+export const OverlayModal = ({ onClose, children, title, subTitle }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleClose = () => {
@@ -21,13 +23,14 @@ export const OverlayModal = ({ onClose, children, title }) => {
     <div className={style['modal-overlay']}>
       <div className={style['modal-content']}>
         <div className={style['header-section']}>
-          <h2 className={style['heading']}>{title}</h2>
+          <Title title={title} />
+          {subTitle && <div>{subTitle}</div>}
           <span className={style['modal-close']}>
             <Button
               icon={<IoCloseSharp />}
-              border={'none'}
-              color={'transparent'}
-              size={'xs'}
+              border={AppConstants.BUTTON.BORDER.NONE}
+              color={AppConstants.BUTTON.COLOR.TRANSPARENT}
+              size={AppConstants.BUTTON.SIZE.XS}
               click={handleClose}
             />
           </span>
@@ -41,4 +44,5 @@ OverlayModal.propTypes = {
   onClose: PropTypes.func,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   title: PropTypes.string,
+  subTitle: PropTypes.element,
 };

@@ -1,8 +1,14 @@
-$primary-color: #ffffff;
-$secondary-color: #000000;
-$green-shade-light: #c1e792;
-$error-background-dark: #ff1234aa;
-$red-background-light: #ff0000;
-$blue-background-light: #0000ff;
-$grey-background-light: #f8f8f8;
-$dropdown-box-shadow: #0f0f0f1a;
+// Screen Breakpoints (min-screen sizes)
+$laptop-screen-min: 768px;
+$laptop-screen-max: 1023px;
+
+$large-laptop-screen-min: 1024px;
+$large-laptop-screen-max: 1199px;
+
+$desktop-screen-min: 1200px;
+$desktop-screen-max: 1599px;
+
+$large-desktop-screen-min: 1600px;
+$large-desktop-screen-max: 1919px;
+
+$other-large-screens-min: 1920px;
